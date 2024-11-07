@@ -1,6 +1,6 @@
 #include "complex.h"
 #include <cmath>
-#include <../../common/common.h>
+#include <common.h>
 
 QChar complex::SEPARATOR = separator;
 

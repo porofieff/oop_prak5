@@ -1,5 +1,5 @@
 #include "application.h"
-#include "../../common/common.h"
+#include "common.h"
 
 Application::Application(int argc, char *argv[])
     : QCoreApplication(argc,argv)

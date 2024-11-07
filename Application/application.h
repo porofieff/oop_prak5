@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QCoreApplication>
 
-#include "../../common/communicator.h"
+#include "communicator.h"
 #include "polinome.h"
 
 class Application : public QCoreApplication

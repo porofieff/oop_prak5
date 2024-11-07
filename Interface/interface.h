@@ -2,8 +2,8 @@
 #define INTERFACE_H
 
 #include <QWidget>
-#include "../../p5server/Application/number.h"
-#include "../../p5server/Application/polinome.h"
+#include "number.h"
+#include "polinome.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
