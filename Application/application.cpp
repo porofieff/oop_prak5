@@ -11,9 +11,9 @@ Application::Application(int argc, char *argv[])
     connect(comm,SIGNAL(recieved(QByteArray)),this,SLOT(recieve(QByteArray)));
 
     p.change_size(2);
-    p.change_an(2);
-    p.change_roots(1, 0);
-    p.change_roots(3, 1);
+    p.change_an(number(2, 0));
+    p.change_roots(number(1, 0), 0);
+    p.change_roots(number(3, 0), 1);
 }
 
 void Application::recieve(QByteArray msg)

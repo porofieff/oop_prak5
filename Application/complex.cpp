@@ -51,6 +51,13 @@ QByteArray& operator>>(QByteArray& arr, complex& c)
     return arr;
 }
 
+complex::complex(const QByteArray& arr)
+{
+    int p = arr.indexOf(SEPARATOR);
+    re = arr.left(p).toDouble();
+    im = arr.right(arr.length()-p-1).toDouble();
+}
+
 complex complex::operator*(complex c)
 {
     complex t;
