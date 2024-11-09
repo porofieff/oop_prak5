@@ -22,7 +22,7 @@ void Application::recieve(QByteArray msg)
 {
     QString answer, s;
     complex an, x, v, root;
-    int size, root_pos;
+    int size, root_pos, pol_size;
     int pos = msg.indexOf(separator);
     int t = msg.left(pos).toInt();
     switch (t)
@@ -70,20 +70,24 @@ void Application::recieve(QByteArray msg)
         pos = msg.indexOf(separator);
         root_pos = msg.left(pos).toInt();
         p.change_roots(root, root_pos);
-        answer << QString().setNum(CHANGE_LAST_ANSWER); //1
+        answer << QString().setNum(CHANGE_LAST_ANSWER);
         break;
     case CHANGE_POL_ROOTS_REQUEST:
         msg = msg.right(msg.length()-pos-1);
         msg >> root;
-        pos = msg.indexOf(separator);//2
+        pos = msg.indexOf(separator);
         root_pos = msg.left(pos).toInt();
         p.change_roots(root, root_pos);
         if (root_pos == p.get_size() - 1)
-            answer << QString().setNum(CHANGE_LAST_ANSWER);//3
+            answer << QString().setNum(CHANGE_LAST_ANSWER);
         else
             answer << QString().setNum(CHANGE_POL_ANSWER);
         break;
+    case GET_POLIN_SIZE:
+        pol_size = p.get_size();
+        answer<<QString().setNum(SIZE_ANSWER);
+        answer += pol_size;
     default: return;
     }
-    comm->send(QByteArray().append(answer));//4
+    comm->send(QByteArray().append(answer));
 }

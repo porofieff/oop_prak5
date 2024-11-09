@@ -18,7 +18,9 @@ SOURCES += \
         array.cpp \
         complex.cpp \
         main.cpp \
-        polinome.cpp
+        polinome.cpp\
+        ../common/communicator.cpp \
+            ../common/common.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -33,4 +35,6 @@ HEADERS += \
     array.h \
     complex.h \
     number.h \
-    polinome.h
+    polinome.h \
+    ../common/communicator.h \
+        ../common/common.h

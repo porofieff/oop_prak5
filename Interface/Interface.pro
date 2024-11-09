@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,11 +12,17 @@ INCLUDEPATH += ../common
 #INCLUDEPATH += ../Application
 
 SOURCES += \
+    application.cpp \
     main.cpp \
-    interface.cpp
+    interface.cpp \
+    ../common/communicator.cpp \
+        ../common/common.cpp
 
 HEADERS += \
-    interface.h
+    application.h \
+    interface.h \
+    ../common/communicator.h \
+        ../common/common.h
 
 FORMS += \
     interface.ui

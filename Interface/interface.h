@@ -22,6 +22,7 @@ private:
     void clear_face();
     int num = 0;
     int prev_butt = 0;
+    int size;
     //Polinome polin;
 
 public slots:
@@ -31,8 +32,12 @@ public slots:
     void on_change_print_but_clicked();
     void on_change_len_but_clicked();
     void on_do_but_clicked();
+    void answer(QString);
 private slots:
     void on_index_change_buttom_clicked();
     void on_exit_buttom_clicked();
+
+signals:
+    void request(QString);
 };
 #endif // INTERFACE_H
