@@ -2,8 +2,6 @@
 #define INTERFACE_H
 
 #include <QWidget>
-#include "number.h"
-#include "polinome.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,7 +22,7 @@ private:
     void clear_face();
     int num = 0;
     int prev_butt = 0;
-    Polinome polin;
+    //Polinome polin;
 
 public slots:
     void on_change_an_but_clicked();

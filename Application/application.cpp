@@ -1,5 +1,7 @@
 #include "application.h"
 #include "common.h"
+#include "communicator.h"
+
 
 Application::Application(int argc, char *argv[])
     : QCoreApplication(argc,argv)
@@ -68,20 +70,20 @@ void Application::recieve(QByteArray msg)
         pos = msg.indexOf(separator);
         root_pos = msg.left(pos).toInt();
         p.change_roots(root, root_pos);
-        answer << QString().setNum(CHANGE_LAST_ANSWER);
+        answer << QString().setNum(CHANGE_LAST_ANSWER); //1
         break;
     case CHANGE_POL_ROOTS_REQUEST:
         msg = msg.right(msg.length()-pos-1);
         msg >> root;
-        pos = msg.indexOf(separator);
+        pos = msg.indexOf(separator);//2
         root_pos = msg.left(pos).toInt();
         p.change_roots(root, root_pos);
         if (root_pos == p.get_size() - 1)
-            answer << QString().setNum(CHANGE_LAST_ANSWER);
+            answer << QString().setNum(CHANGE_LAST_ANSWER);//3
         else
             answer << QString().setNum(CHANGE_POL_ANSWER);
         break;
     default: return;
     }
-    comm->send(QByteArray().append(answer));
+    comm->send(QByteArray().append(answer));//4
 }

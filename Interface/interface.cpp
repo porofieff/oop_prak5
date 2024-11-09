@@ -1,5 +1,6 @@
 #include "interface.h"
 #include "ui_interface.h"
+#include "common.h"
 #include <iostream>
 
 using namespace std;
@@ -33,14 +34,14 @@ Interface::Interface(QWidget *parent)
     ui->setupUi(this);
     prev_butt = 0;
 
-    number a_n(3, 0);
+    /*number a_n(3, 0);
     number n_roots[] = {number(3, 0), number(2, 0), number(1, 0)};
     polin.change_size(3);
     polin.change_an(a_n);
     polin.change_roots(n_roots[0], 0);
     polin.change_roots(n_roots[1], 1);
     polin.change_roots(n_roots[2], 2);
-    polin.change_print_mode(PrintModeClassic);
+    polin.change_print_mode(PrintModeClassic);*/
 
     clear_face();
 }
